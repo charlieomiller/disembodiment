@@ -3,6 +3,8 @@ package net.charl.disembodiment.block.entity;
 import net.charl.disembodiment.Disembodiment;
 import net.charl.disembodiment.config.ModConfigs;
 import net.charl.disembodiment.networking.ModNetworking;
+import net.charl.disembodiment.networking.StartActiveSoundS2C;
+import net.charl.disembodiment.networking.StopActiveSoundS2C;
 import net.charl.disembodiment.networking.TimerSyncS2C;
 import net.charl.disembodiment.sound.ModSounds;
 import net.minecraft.core.BlockPos;
@@ -27,6 +29,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.network.PacketDistributor;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -207,6 +210,11 @@ public class DematerializerBlockEntity extends BlockEntity {
                                     ));
 
                                     sp.onUpdateAbilities(); // And this to ensure that the player is ACTUALLY in spectator
+
+                                    // Sound player appropriately
+                                    var snd = ModSounds.PLAYER_DEMATERIALIZATION_LOOP.getId(); // ResourceLocation of your .ogg SoundEvent
+                                    ModNetworking.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
+                                            new StartActiveSoundS2C(snd, 1f, 20)); // 1s fade-in (20 ticks)
                                 }
                                 //System.out.println("Server thinks " + sp.getGameProfile().getName() + " + is now " + sp.gameMode.getGameModeForPlayer());
                                 // Send timer update to player for HUD update
@@ -256,6 +264,9 @@ public class DematerializerBlockEntity extends BlockEntity {
                             ServerPlayer sp = sl.getServer().getPlayerList().getPlayer(playerId);
                             if (sp != null) {
                                 t.restore.restore(sp, sl.getServer()); // t.restore is the PlayerRestoreConditions in the PlayerTimer, restore() reverts everything
+
+                                ModNetworking.CHANNEL.send(net.minecraftforge.network.PacketDistributor.PLAYER.with(() -> sp),
+                                        new StopActiveSoundS2C(20)); // 1s fade-out
                             }
                         }
                         t.restore = null;

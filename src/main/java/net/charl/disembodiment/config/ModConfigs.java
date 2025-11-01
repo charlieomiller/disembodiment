@@ -27,7 +27,7 @@ public class ModConfigs {
 
             secondsBeforeDematerialization = b
                     .comment("How many seconds the buffer between inserting Inkor and fully dematerializing lasts.")
-                    .defineInRange("seconds_before_dematerialization", 1, 0, 60);
+                    .defineInRange("seconds_before_dematerialization", 2, 0, 60);
             killDematerializedOnBreak = b
                     .comment("Should dematerialized players be killed if root dematerializer is destroyed?")
                     .define("killed_dematerialized_on_break", true);

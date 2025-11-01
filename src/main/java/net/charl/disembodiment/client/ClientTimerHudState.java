@@ -5,6 +5,7 @@ import org.jline.utils.Display;
 
 public final class ClientTimerHudState {
     private static TimerSyncS2C.Phase phase = TimerSyncS2C.Phase.NONE;
+    private static TimerSyncS2C.Phase prevPhase = TimerSyncS2C.Phase.NONE;
     private static int secRemaining = 0;
     private static int secTotal = 0;
 

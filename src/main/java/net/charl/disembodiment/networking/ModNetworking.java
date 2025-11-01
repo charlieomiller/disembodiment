@@ -22,6 +22,17 @@ public final class ModNetworking {
                 TimerSyncS2C::encode,
                 TimerSyncS2C::decode,
                 TimerSyncS2C::handle);
+        CHANNEL.registerMessage(id++,
+                StartActiveSoundS2C.class,
+                StartActiveSoundS2C::encode,
+                StartActiveSoundS2C::decode,
+                StartActiveSoundS2C::handle);
+        CHANNEL.registerMessage(id++,
+                StopActiveSoundS2C.class,
+                StopActiveSoundS2C::encode,
+                StopActiveSoundS2C::decode,
+                StopActiveSoundS2C::handle);
+
     }
 
     private ModNetworking() {} // Ensure this class isn't instantiated

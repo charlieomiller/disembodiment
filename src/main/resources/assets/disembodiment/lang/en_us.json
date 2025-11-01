@@ -5,6 +5,7 @@
   "block.disembodiment.dematerializer": "Dematerializer",
 
   "sounds.disembodiment.dematerializer_start_buffer": "Dematerializer Whirring (Disembodiment)",
+  "sounds.disembodiment.player_dematerialization_loop": "Ambience (Disembodiment)",
 
   "death.attack.disembodiment.dematerialized": "%1$s slipped through the cracks"
 }

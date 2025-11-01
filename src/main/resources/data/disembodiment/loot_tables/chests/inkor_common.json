@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "conditions": [
+        { "condition":  "minecraft:random_chance", "chance":  0.10 }
+      ],
+      "entries": [
+        { "type": "minecraft:item", "name": "disembodiment:inkor" }
+      ],
+      "functions": [
+        { "function": "minecraft:set_count", "count": { "min": 1, "max": 4 } }
+      ]
+    }
+  ]
+}

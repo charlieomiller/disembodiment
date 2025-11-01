@@ -4,5 +4,11 @@
     "sounds": [
       "disembodiment:dematerializer_start_buffer"
     ]
+  },
+  "player_dematerialization_loop": {
+    "subtitles": "sound.disembodiment.player_dematerialization_loop",
+    "sounds": [
+      { "name": "disembodiment:player_dematerialization_loop", "stream":  true }
+    ]
   }
 }

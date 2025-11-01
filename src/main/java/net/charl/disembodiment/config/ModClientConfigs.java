@@ -1,6 +1,5 @@
 package net.charl.disembodiment.config;
 
-import ca.weblite.objc.Client;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.config.ModConfig;
@@ -22,6 +21,7 @@ public class ModClientConfigs {
     public static final class Client {
         public final ForgeConfigSpec.BooleanValue enableVignette;
         public final ForgeConfigSpec.BooleanValue enableHudTimer;
+        public final ForgeConfigSpec.BooleanValue enableAmbience;
 
         Client(ForgeConfigSpec.Builder b) {
             b.push("visuals");
@@ -31,6 +31,9 @@ public class ModClientConfigs {
             enableHudTimer = b
                     .comment("Display on-screen timer?")
                     .define("enable_hud_timer", true);
+            enableAmbience = b
+                    .comment("Play ambient sfx while player is dematerialized?")
+                            .define("enable_ambience", true);
             b.pop();
         }
     }
