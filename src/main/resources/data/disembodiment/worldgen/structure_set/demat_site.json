@@ -1,0 +1,11 @@
+{
+  "structures": [
+    { "structure": "disembodiment:demat_site", "weight": 1 }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 9000455,
+    "spacing": 36,
+    "separation": 12
+  }
+}

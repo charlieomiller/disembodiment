@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:plains",
+    "minecraft:sunflower_plains",
+    "minecraft:forest",
+    "minecraft:flower_forest",
+    "minecraft:birch_forest",
+    "minecraft:old_growth_birch_forest",
+    "minecraft:dark_forest",
+    "minecraft:taiga",
+    "minecraft:old_growth_pine_taiga",
+    "minecraft:old_growth_spruce_taiga",
+    "minecraft:windswept_hills",
+    "minecraft:windswept_forest",
+    "minecraft:windswept_gravelly_hills",
+    "minecraft:meadow",
+    "minecraft:savanna",
+    "minecraft:windswept_savanna"
+    ]
+}
